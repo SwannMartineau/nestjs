@@ -1,0 +1,11 @@
+{
+    "Shaman King": {
+        "prix_unitaire": 10
+    },
+    "Soul Eater": {
+        "prix_unitaire": 12
+    },
+    "Jujustu Kaisen": {
+        "prix_unitaire": 15
+    }
+}

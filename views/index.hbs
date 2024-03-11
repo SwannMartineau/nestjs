@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mangavore</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="./public/css/style.css">
+<link rel="stylesheet" href="./public/css/header.css">
+<link rel="stylesheet" href="./public/css/grid.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+</style>
+
+<body>
+
+	<div class="navbar">
+
+	  <a href="#home" class="active"> Découvrez notre magasin </a>
+	  <a href="#news"> Notre actualité </a>
+	  <a href="#contact"> Conseil de lecture </a>
+
+	</div class="navbar">
+	
+	<div class="header">
+
+		<h1 class="title"> Librairie Mangavore</h1>
+		<p>Tes mangas préférés disponible dès maintenant !</p>
+
+	</div>
+
+	<div class="wrapper presentation">
+
+		<p class="one paragraph">
+			Situé près de Bastille en plein Paris, notre boutique
+			est prête à vous faire rêvé, Mangavore est une librairie spécialisé dans les mangas
+			proposant plusieurs gammes de produits tels que des mangas, des figurines ainsi que des jeux vidéos.
+		</p>
+
+		<h1 class="two title2">
+			Conseils de lecture
+		</h1>
+
+		<div class="three tableau">
+				<img class="image1" src ="./public/image/manga1.jpg"></img>
+				<p class="manga">Shaman King 10€</p>
+				<p class="manga2">De Hiroyuki Takei</p>
+		</div>
+
+		<div class="four tableau">
+			<img class ="image1" src ="./public/image/manga2.jpg"></img>
+			<p class="manga">Soul Eater 12€</p>
+			<p class="manga2">De Atsushi Ōkubo</p>
+		</div>
+		
+		<div class="five tableau">
+			<img class ="image1" src ="./public/image/manga3.jpg"></img>
+			<p class="manga">Jujustu Kaisen 15€</p>
+			<p class="manga2">De Gege Akutami</p>
+		</div>
+
+        <div class="five2">
+            <!-- Sélection de l'image de manga -->
+            <select id="manga">
+            <option value="Shaman King">Shaman King</option>
+            <option value="Soul Eater">Soul Eater</option>
+            <option value="Jujustu Kaisen">Jujustu Kaisen</option>
+            </select>
+
+            <!-- Entrée de la quantité -->
+            <input type="number" id="quantite" min="1" value="1">
+
+            <!-- Affichage du prix total -->
+            <p id="prix-total"></p>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+            $('#manga, #quantite').change(function() {
+                // Récupérer les données de prix depuis le serveur
+                $.getJSON('http://localhost:3000/prix', function(prixData) {
+                // Récupérer le nom du manga et la quantité sélectionnée
+                var manga = $('#manga').val();
+                var quantite = parseInt($('#quantite').val());
+
+                // Obtenir le prix unitaire du manga sélectionné
+                var prixUnitaire = prixData[manga].prix_unitaire;
+
+                // Calculer le prix total en fonction de la quantité
+                var prixTotal = prixUnitaire * quantite;
+
+                // Afficher le prix total
+                $('#prix-total').text('Prix total: $' + prixTotal);
+                });
+            });
+            });
+        </script>
+        <div class="five3 commentaires">
+            {{#each commentaires}}
+            <div class="commentaire">
+                <p>{{ utilisateur }}</p>
+                <p>{{ contenu }}</p>
+            </div>
+            {{/each}}
+        </div>
+        <div class="five4">
+            <form method="POST" action="http://localhost:3000/commentaires">
+                <input type="text" name="utilisateur" placeholder="Votre nom">
+                <textarea name="contenu" placeholder="Votre commentaire"></textarea>
+                <button type="submit">Ajouter un commentaire</button>
+            </form>
+        </div>
+		<div class="six">
+			<h1 class="title2">
+				Notre Actualité
+			</h1>
+		</div>
+
+		<div class="seven container">
+			<img class="image2" src="./public/image/article1.jpg"></img>
+			<div class="article1">
+				<p class="date">06/02/2023</p>
+				<h3>Interview avec Bandai Namco</h3>
+				<p>Nous avons récemment eu la chance de rencontrer le créateur de Dragon Ball: The Breakers, Ryosuke Hara, 
+					pour lui poser quelques questions au sujet de ce titre qui vient d'être annoncé dans l'univers de Dragon Ball. 
+					Nous sommes ravis de partager ses réponses pour découvrir plus de détails sur le jeu ! </p>
+			</div>
+		</div>	
+		
+		<div class="eight tableau2">
+			<img class="image1" src ="./public/image/article2.jpg"></img>
+			<p class="date">05/02/2023</p>
+			<p class="manga3"> Hunter X Hunter </p>
+			<p class="manga4"> 
+				Abandonné par son père qui est un Hunter, à la fois un aventurier et un chasseur de primes, Gon décide à 
+				l'âge de 12 ans de partir pour devenir un Hunter. Cela ne sera pas chose aisée, 
+				il devra passer une suite de tests et examens en compagnie de milliers d'autres prétendants au titre de Hunter. </p>
+		</div>
+		
+		<div class="nine tableau2">
+			<img class="image1" src ="./public/image/article3.jpg"></img>
+			<p class="date">04/02/2023</p>
+			<p class="manga3"> One Piece </p>
+			<p class="manga4"> 
+				Monkey D. Luffy rêve de retrouver ce trésor légendaire et de devenir le nouveau "Roi des Pirates". Après avoir mangé un fruit du démon, 
+				il possède un pouvoir lui permettant de réaliser son rêve. Il lui faut maintenant trouver un équipage pour partir à l'aventure ! </p>
+		</div>
+
+		<div class="ten tableau2">
+			<img class="image1" src ="./public/image/article4.jpg"></img>
+			<p class="date">03/02/2023</p>
+			<p class="manga3"> Samouraï Champloo </p>
+			<p class="manga4"> 
+				Samuraï Champloo est une série unique de 26 épisodes dans l'époque des samouraïs, l'ère Edo. <br>On suivra Fuu, une jeune serveuse, qui parcourra 
+				le Japon à la recherche d'un samouraï qui sent le tournesol avec l'appui de 2 samouraï complètement différents : Mugen extravagant et Jin impassible. 
+			</p>
+		</div>
+
+	</div>	
+	
+</body>
+</html>

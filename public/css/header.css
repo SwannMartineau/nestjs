@@ -1,0 +1,14 @@
+.header {
+    background-image: url("../image/background.jpg");
+    padding: 100px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+.title {
+  margin:0;
+  padding-top: 100;
+  color: rgb(227, 219, 248);
+}
+

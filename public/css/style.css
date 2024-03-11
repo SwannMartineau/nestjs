@@ -1,0 +1,149 @@
+/* Retire l'espace entre le haut de la page, la partie gauche de la page avec les éléments du body*/
+body {
+	margin:0;
+}
+
+.navbar {
+  background-color: #333;	/* Ajoute un fond noir à la barre de navigation */
+  height: 10%; /* La barre de navigation prend 10% de la hauteur de la page */
+  width: 100%;	/* La barre de navigation prend toute la largeur de la page */
+  text-align: center; /*Permet de mettre les éléments de la barre de navigation au milieu*/
+}
+
+/* Stylise les liens dans la barre de navigation */
+.navbar a {
+  display: inline-block;/*Permet de mettre les éléments en ligne et non en colonne*/
+  color: #f2f2f2; /* Met le texte de la barre en blanc*/
+  padding: 14px 16px; /* Met l'espace entre les éléments de la barre de navigation */
+  text-decoration: none; /* retire le soulignage des éléments a qui est mis par défault pour les liens*/
+  font-size: 14px; /* Taille de la police en 17 pixels*/
+}
+
+/* change l'élément au passage de la souris par l'utilisateur*/
+.navbar a:hover {
+  background-color: #ddd; /* Au passage de la souris l'arrière plan de l'élément devient blanc */
+  color: black; /* Au passage de la souris le texte devient noir*/
+}
+
+/* Ajoute une classe active en  fonction de la page sur laquelle on est, or ici il s'agit de la page Accueil */
+.navbar a.active {
+  background-color: #04AA6D; /* Met le fond en vert de la page active*/
+  color: white;	/* Mettre le texte en blanc de la page active*/
+}
+
+.presentation {
+  padding-top: 20px;
+}
+
+.paragraph {
+  color: black;
+  text-align: center;
+  font-size: 20px;
+}
+
+.title2{
+  text-align: center;
+  color: rgb(44, 42, 42);
+  font-size: 40px;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #553c9a 45%, #ee4b2b);
+  color: transparent;
+  margin-top: 15%;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.tableau{
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tableau2{
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.image1 {
+  width: 100%;
+}
+
+.image2 {
+  width: 50%;
+}
+
+img{
+  opacity: 0.6;
+}
+
+.active,
+img:hover {
+  opacity: 1;
+}
+
+.manga {
+  text-align: center;
+  color: black;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #553c9a 45%, #ee4b2b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.manga2 {
+  text-align: center;
+  color: black;
+  margin-top: 2px;
+  font-size: 16px;
+  font-weight: 400;
+  background-image: linear-gradient(to right, #553c9a 45%, #ee4b2b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.manga3 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #553c9a 45%, #ee4b2b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.manga4 {
+  color: black;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  background-image: linear-gradient(to right, #553c9a 45%, #ee4b2b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 60%;
+}
+
+.article1 {
+  margin-left: 3%;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.date{
+  color: #04AA6D;
+}
